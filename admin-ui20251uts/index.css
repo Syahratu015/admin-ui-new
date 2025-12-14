@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* boleh CSS lain di bawah */
+body {
+  margin: 0;
+}
