@@ -1,73 +1,51 @@
-import LabeledInput from "../Elements/LabeledInput";
-import CheckBox from "../Elements/CheckBox";
-import Button from "../Elements/Button";
+import Logo from "../Elements/Logo";
+import { Link } from "react-router-dom";
 
-function FormSignIn() {
+export default function FormSignIn() {
   return (
-    <>
-      {/* form start */}
-      <div className="mt-16">
-        <form>
-          <div className="mb-6">
-            <LabeledInput
-              label="Email Address"
-              id="email"
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="w-full max-w-md bg-white p-8 rounded-lg shadow">
+
+        <Logo />
+
+        <h2 className="text-center text-lg font-semibold mb-6">
+          Sign In to Your Account
+        </h2>
+
+        {/* FORM */}
+        <form className="space-y-4">
+          <div>
+            <label className="block text-sm mb-1">Email Address</label>
+            <input
               type="email"
               placeholder="hello@example.com"
-              name="email"
+              className="w-full border px-3 py-2 rounded"
             />
           </div>
 
-          <div className="mb-6">
-            <LabeledInput
-              label="Password"
-              id="password"
+          <div>
+            <label className="block text-sm mb-1">Password</label>
+            <input
               type="password"
-              placeholder="••••••••••••"
-              name="password"
+              placeholder="••••••••"
+              className="w-full border px-3 py-2 rounded"
             />
           </div>
 
-          <div className="mb-3">
-            <CheckBox
-              label="Keep me signed in"
-              id="status"
-              name="status"
-            />
-          </div>
-
-          <Button>Login</Button>
+          <button className="w-full bg-teal-600 text-white py-2 rounded">
+            Login
+          </button>
         </form>
-      </div>
-      {/* form end */}
 
-      {/* teks start */}
-      <div className="my-9 px-7 flex flex-col justify-center items-center text-xs text-gray-03">
-        <div className="border border-gray-05 w-full"></div>
-        <div className="px-2 bg-special-mainBg absolute">
-          or sign in with
-        </div>
-      </div>
-      {/* teks end */}
+        {/* LINK KE REGISTER */}
+        <p className="text-center text-sm mt-6">
+          Don’t have an account?{" "}
+          <Link to="/register" className="text-primary font-bold">
+            Create an Account
+          </Link>
+        </p>
 
-      {/* sign in with google start */}
-      <div className="mb-8">
-        <Button type="button" variant="secondary">
-          <span className="flex items-center justify-center">
-            <svg
-              className="h-6 w-6 mr-2"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="-0.5 0 48 48"
-            >
-              {/* path tetap */}
-            </svg>
-            Continue with Google
-          </span>
-        </Button>
       </div>
-      {/* sign in with google end */}
-    </>
+    </div>
   );
 }
-
-export default FormSignIn;
