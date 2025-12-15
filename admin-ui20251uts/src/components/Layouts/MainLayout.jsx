@@ -74,13 +74,13 @@ function MainLayout(props) {
             
             {/* Bagian Kiri: Username & Datetime */}
             <div className="flex items-center space-x-3 text-sm mr-4">
-              <div className="font-semibold text-gray-700">Hello Tanzir</div> 
+              <div className="font-semibold text-gray-700">Syahratu</div> 
               <div className="text-gray-500">» May 19, 2023</div> 
             </div>
             
             {/* Bagian Kanan: Icon & Search Box */}
             <div className="flex items-center space-x-6 ml-4">
-              <div className="text-xl text-gray-600">🔔 Icon</div> 
+              <div className="text-xl text-gray-600"> Icon</div> 
               
               {/* 2. GANTI DENGAN KOMPONEN INPUT */}
               <div className="flex items-center">

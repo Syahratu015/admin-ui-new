@@ -1,13 +1,17 @@
+// File: src/App.jsx
+
 import "./App.css";
 import SignInPage from "./pages/signIn";
 import SignUpPage from "./pages/signUp";
-import ErrorPage from "./pages/error"; // Ini juga bisa berfungsi sebagai 404
+import ErrorPage from "./pages/error";
 import DashboardPage from "./pages/dashboard";
-import { createBrowserRouter, Link, RouterProvider, Navigate } from "react-router-dom"; // Import Navigate
+
+// Hapus duplikasi, hanya impor yang diperlukan
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom"; 
 
 function App() {
   const myRouter = createBrowserRouter([
-    // 1. RUTE ROOT / INDEX: Meneruskan pengguna ke halaman Login secara default
+    // 1. RUTE ROOT / INDEX: Mengarahkan pengguna ke halaman Login secara default
     {
       path: "/",
       element: <Navigate to="/login" replace />, // Mengarahkan '/' ke '/login'
@@ -32,7 +36,7 @@ function App() {
       element: <SignUpPage />,
     },
     
-    // 2. RUTE 404 (CATCH-ALL): Jika path tidak cocok di atas
+    // 2. RUTE 404 (CATCH-ALL): Jika path tidak cocok
     {
       path: "*",
       element: <ErrorPage />, // Menggunakan ErrorPage untuk menangani 404
@@ -40,10 +44,10 @@ function App() {
   ]);
 
   return (
-    <>
-      <RouterProvider router={myRouter} />
-    </>
+    // Hapus duplikasi <RouterProvider>
+    <RouterProvider router={myRouter} />
   );
 }
 
 export default App;
+// Hapus export default yang duplikat
